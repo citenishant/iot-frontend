@@ -3,6 +3,13 @@ import DeviceList from './components/DeviceList';
 import DeviceControl from './components/DeviceControl';
 import Footer from './components/Footer';
 
+const backendUrl = "https://iot-backend.onrender.com";
+
+// Example API call
+fetch(`${backendUrl}/devices`)
+  .then(response => response.json())
+  .then(data => console.log(data));
+
 const App = () => {
     const [selectedDevice, setSelectedDevice] = useState(null);
 
