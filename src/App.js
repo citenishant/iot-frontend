@@ -15,7 +15,7 @@ const App = () => {
         </div>
     );
 
-const backendUrl = "https://iot-backend.onrender.com";
+const backendUrl = "https://iot-backend-1-5s3t.onrender.com";
 fetch(`${backendUrl}/devices`)
   .then(response => response.json())
   .then(data => console.log(data));
