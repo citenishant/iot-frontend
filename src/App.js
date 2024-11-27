@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import DeviceList from './components/DeviceList';
+import DeviceControl from './components/DeviceControl';
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [selectedDevice, setSelectedDevice] = useState(null);
+
+    return (
+        <div style={{ paddingBottom: '50px' }}> {/* Leave space for footer */}
+            <h1>IoT Dashboard</h1>
+            <DeviceList onSelect={setSelectedDevice} />
+            {selectedDevice && <DeviceControl device={selectedDevice} />}
+            <Footer />
+        </div>
+    );
+};
 
 export default App;
